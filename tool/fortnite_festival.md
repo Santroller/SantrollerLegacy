@@ -23,7 +23,7 @@ Its easiest to emulate a riffmaster, as this then gives you all the guitar input
 
       [![Console Mode Direct](/assets/images/screenshots/xbox_direct.png)](/assets/images/screenshots/fnf_console_direct.png)
 
-      This would make it so holding the button on pin GP4 when pluging in the guitar makes the guitar go into xbox one controller mode.
+      This would make it so holding the button on pin 4 when plugging in the guitar makes the guitar go into Xbox One controller mode.
 6. Save your settings
 7. Unplug and replug the guitar, holding the input you just configured. Your guitar should show up as a riffmaster in game now.
 8. Play festival
@@ -45,16 +45,12 @@ For festival, its easiest to use keyboard mode on consoles. This is because keyb
 
       [![Console Mode Direct](/assets/images/screenshots/fnf_console_direct.png)](/assets/images/screenshots/fnf_console_direct.png)
 
-      This would make it so holding the button on pin GP4 when pluging in the guitar makes the guitar go into the Fortnite Festival keyboard emulation.
+      This would make it so holding the button on pin 4 when plugging in the guitar makes the guitar go into the Fortnite Festival keyboard emulation.
 5. If you wish to play on PlayStation, go into `Controller Settings` and make sure the `Rollover Mode` is set to `6KRO`
 6. Save your settings
 7. Unplug and replug the guitar, holding the input you just configured. Your guitar should show up as a keyboard now.
 8. Play festival
 9.  Unplug and replug the guitar without holding a button to go back to normal mode or to configure.
-
-## Console - Native controller (Requires keeping an authentication controller plugged in)
-
-If you wish for your guitar to show up as a native guitar on PS4/5 or Xbox One / Series, you will need to follow the [authentication](https://santroller.tangentmc.net/console_guides/authentication.html) instructions, and then your guitar will just work. Note that this does mean you need to plug a controller in to authenticate, and for PS4/5 the controller will need to stay plugged in, so it isn't as simple as keyboard mode. note that for PS4, you will need to set the ps4 emulation mode to PS4 under USB host, as it defaults to PS3.
 
 ## iOS
 
@@ -73,7 +69,7 @@ For festival there is a specific mode for iOS compatibility. You will need to ad
 
       [![Console Mode Direct](/assets/images/screenshots/fnf_console_direct.png)](/assets/images/screenshots/fnf_console_direct.png)
 
-      This would make it so holding the button on pin GP4 when pluging in the guitar makes the guitar go into the Fortnite Festival keyboard emulation.
+      This would make it so holding the button on pin 4 when plugging in the guitar makes the guitar go into the Fortnite Festival keyboard emulation.
 4. If you wish to play on PlayStation, go into `Controller Settings` and make sure the `Rollover Mode` is set to `6KRO`
 5. Save your settings
 6. Hold the button you configured while plugging your controller into your iOS device
@@ -93,7 +89,7 @@ On devices without native guitar support, the games default to mappings that are
 
       [![Console Mode Direct](/assets/images/screenshots/fnf_console_direct.png)](/assets/images/screenshots/fnf_console_direct.png)
 
-      This would make it so holding the button on pin GP4 when pluging in the guitar makes the guitar go into the Fortnite Festival keyboard emulation.
+      This would make it so holding the button on pin 4 when plugging in the guitar makes the guitar go into the Fortnite Festival keyboard emulation.
 5. Save your settings
 6. Start festival and get into a song
 7. Hit your button combination

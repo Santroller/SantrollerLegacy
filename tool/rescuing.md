@@ -4,11 +4,6 @@ sort: 2
 # Rescuing a device that is no longer detected
 The tool has the ability to detect devices in firmware update mode, and offer to fix them back up. Below, are various guides on how to enter firmware update mode on various microcontrollers.
 
-## Pi Pico
-Unplug your Pi Pico from your computer, press and hold the BOOTSEL button and plug it back into your computer while you are holding the button. Once it shows up as a USB drive on your computer, you can stop holding BOOTSEL and program it again with the tool.
-
-[![Pi Pico BOOTSEL](/assets/images/pico-bootsel.png)](/assets/images/pico-bootsel.png)
-
 ## Pro Micro 
 The Pro Micro is a bit special, in that it will only stay in bootloader mode for 8 seconds. This means that the easiest way to rescue a Pro Micro is to open the tool first.
 

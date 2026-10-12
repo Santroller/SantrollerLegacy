@@ -2,9 +2,9 @@
 
 | Controller Type                        | Game                    | PS2 Support                                                                                                                                                                                                      |
 | -------------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Gamepad                                | Any                     | Requires [PS2 Controller emulation](https://santroller.tangentmc.net/wiring_guides/ps2_output.html) or a Modded PS2 + [nightly build of OPL](https://github.com/ps2homebrew/Open-PS2-Loader/releases/tag/latest) |
-| Guitar Hero Guitar                     | Guitar Hero 2           | Requires [PS2 Controller emulation](https://santroller.tangentmc.net/wiring_guides/ps2_output.html) or a Modded PS2 + [nightly build of OPL](https://github.com/ps2homebrew/Open-PS2-Loader/releases/tag/latest) |
-| Guitar Hero Guitar                     | Guitar Hero 3           | Requires [PS2 Controller emulation](https://santroller.tangentmc.net/wiring_guides/ps2_output.html) or a Modded PS2 + [nightly build of OPL](https://github.com/ps2homebrew/Open-PS2-Loader/releases/tag/latest) |
+| Gamepad                                | Any                     | Requires a modded PS2 and a [nightly build of OPL](https://github.com/ps2homebrew/Open-PS2-Loader/releases/tag/latest) |
+| Guitar Hero Guitar                     | Guitar Hero 2           | Requires a modded PS2 and a [nightly build of OPL](https://github.com/ps2homebrew/Open-PS2-Loader/releases/tag/latest) |
+| Guitar Hero Guitar                     | Guitar Hero 3           | Requires a modded PS2 and a [nightly build of OPL](https://github.com/ps2homebrew/Open-PS2-Loader/releases/tag/latest) |
 | Guitar Hero Guitar / Guitar Hero Drums | Guitar Hero WT or newer | Works natively                                                                                                                                                                                                   |
 | Rock Band Guitar / Rock Band Drums     | Rock Band (All Games)   | Works natively                                                                                                                                                                                                   |
 | DJ Hero Turntable                      | DJ Hero                 | Works natively                                                                                                                                                                                                   |
@@ -14,10 +14,6 @@ For Rock Band games, the PS2 used USB instruments, so a controller in Rock Band 
 
 Guitar Hero games are a bit more complicated. The first two games used a guitar that was based on the Dualshock 1, which used the standard PS2 controller port. For this reason, these games don't support USB instruments. PADEMU will automatically detect PS3 guitars and emulate PS2 Guitars for these games if it is enabled.
 Guitar Hero World Tour introduced compatibility with PS3 instruments and thus for GHWT or newer, you can just use USB instruments without needing something like PADEMU.
-
-## Emulating a PS2 controller
-
-You can follow the [PS2 controller guide](https://santroller.tangentmc.net/wiring_guides/ps2_output.html), and actually emulate proper PS2 controllers.
 
 ## PADEMU
 

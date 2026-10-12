@@ -14,9 +14,6 @@ This guide walks through the hardware and software setup required to use a Wii c
 
 - **Microcontroller**
 
-  - Pi Pico 1, Pi Pico 2, or microcontrollers based on them are currently the only supported options.
-  - Previous versions of Santroller supported additional microcontrollers; information about those can be found below.
-
   {% include sections/microcontrollers.md %}
 
 - **Wii Extension breakout board or extension cable**
@@ -76,8 +73,6 @@ Connect the SDA and SCL pins from your Wii Extension breakout or extension cable
 
 Refer to the image below for the Wii Extension connector pinout.
 
-The Pi Pico allows multiple pin choices for SDA and SCL. Recommended pins are listed below and match the legacy Ardwiino firmware layout. If using different pins, both SDA and SCL **must be from the same I²C channel**.
-
 ![Port Pinout](../assets/images/wii-ext.jpg)
 ![Port Schematic](../assets/images/wii.png)
 &#x20;
@@ -88,14 +83,11 @@ If you are using a Wii Extension cable, do NOT rely on wire colors.
 Manufacturers use inconsistent coloring. Always verify each wire using the pinout above. Some cables have been observed with green as ground and black as 3.3V.
 ```
 
-| Microcontroller               | SDA                              | SCL                              |
-| ----------------------------- | -------------------------------- | -------------------------------- |
-| Pi Pico (Recommended)         | GP18                             | GP19                             |
-| Pro Micro / Leonardo / Micro  | 2                                | 3                                |
-| Uno                           | A4                               | A5                               |
-| Mega                          | 20                               | 21                               |
-| Pi Pico (Advanced, Channel 0) | GP0, GP4, GP8, GP12, GP16, GP20  | GP1, GP5, GP9, GP13, GP17, GP21  |
-| Pi Pico (Advanced, Channel 1) | GP2, GP6, GP10, GP14, GP18, GP26 | GP3, GP7, GP11, GP15, GP19, GP27 |
+| Microcontroller              | SDA | SCL |
+| ---------------------------- | --- | --- |
+| Pro Micro / Leonardo / Micro | 2   | 3   |
+| Uno                          | A4  | A5  |
+| Mega                         | 20  | 21  |
 
 ---
 
@@ -145,8 +137,7 @@ Connect GND on the Wii Extension breakout or cable to GND on the microcontroller
 2. Set **Connection Method** to `Wii Adapter`
 3. Set **Device to Emulate** to the desired controller type
 4. Click **Configure**
-5. If using a Pi Pico with custom pins, set the SDA and SCL pins
-6. Click **Save Settings**
+5. Click **Save Settings**
 
 ---
 
@@ -192,8 +183,7 @@ Combined strum debounce (guitars only):
 ### Wii Extension inputs
 
 1. Open **Wii Extension Inputs**
-2. If using a Pi Pico, specify the SDA and SCL pins
-3. Click **Save**
+2. Click **Save**
 
 ---
 
@@ -243,9 +233,8 @@ Ensure you are emulating a guitar, then click **Add Setting** and add **Tilt**.
 #### Accelerometer-based tilt
 
 1. Click **Add Setting** and add **Accelerometer**
-2. Set SDA and SCL pins if using a Pi Pico
-3. Click **Save**
-4. Set **Input Type** to `Accelerometer Input`
+2. Click **Save**
+3. Set **Input Type** to `Accelerometer Input`
 5. Click **Calibrate**
 6. Hold the resting position and click **Next**
 7. Tilt up and click **Next**
@@ -254,4 +243,3 @@ Ensure you are emulating a guitar, then click **Add Setting** and add **Tilt**.
    - Values near 0 reduce shake sensitivity but lower responsiveness
    - Values near 1 increase responsiveness but amplify noise
    - A starting value of 0.05 is recommended
-

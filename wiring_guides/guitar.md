@@ -12,9 +12,7 @@ sort: 2
 
 - A microcontroller
 
-  - The Pi Pico 1, Pi Pico 2, or microcontrollers based on them, are currently the only supported microcontrollers. Previous versions of santroller did support other microcontrollers, and information about that can be found below.
-
-    {% include sections/microcontrollers.md %}
+  {% include sections/microcontrollers.md %}
 
 - Some Wire
 - Soldering Iron
@@ -43,17 +41,8 @@ sort: 2
       - No extra parts required.
     - MPR121 Mode, great latency
       - Requires a MPR121, replaces the microcontroller on the slider bar and handles both slider and frets.
-    - Peripheral Pico Mode, great latency.
-      - Requires a second Pi Pico, places the second Pi Pico in the neck and uses that to poll the frets, while leaving the original slider bar pcb to poll the slider bar, sharing power and data between both devices.
     - Hardwire frets, great latency.
       - No extra parts required, but sacrifices the detachable neck.
-  - USB Host
-    - Pi Pico
-    - One of the following
-      - A USB female breakout.
-      - A USB extension cable.
-      - A controller with a cable already attached that you are willing to cut.
-        - Needs to be a wired controller, wireless only controllers won't work, nor will the play and charge kit.
 
 ### Wiring Steps
 
@@ -80,7 +69,6 @@ Once you have successfully modded one guitar (or even during your first) you wil
 
 ```note
 To wire an xplorer start/select board you will have to solder directly to the contacts and cut the traces that connect to each contact. It is not recommended you try to mod an xplorer as your first project because this can be difficult.
-Note that with the Pi Pico, you can instead just hook these inputs up over USB, and avoid soldering them.
 ```
 
 </details>
@@ -135,14 +123,11 @@ If you are working on a controller with only "2" pins as the RB Precision Bass, 
 2. Connect V<sub>CC</sub> to V<sub>CC</sub> (note that this is a 3.3v device, so for 5V microcontrollers make sure your breakout has a voltage regulator onboard or you are using your own regulator)
 3. Hook up SDA and SCL to the microcontroller
 
-   | Microcontroller               | SDA                              | SCL                              |
-   | ----------------------------- | -------------------------------- | -------------------------------- |
-   | Pi Pico (Recommended)         | GP18                             | GP19                             |
-   | Pro Micro, Leonardo, Micro    | 2                                | 3                                |
-   | Uno                           | A4                               | A5                               |
-   | Mega                          | 20                               | 21                               |
-   | Pi Pico (Advanced, Channel 0) | GP0, GP4, GP8, GP12, GP16, GP20  | GP1, GP5, GP9, GP13, GP17, GP21  |
-   | Pi Pico (Advanced, Channel 1) | GP2, GP6, GP10, GP14, GP18, GP26 | GP3, GP7, GP11, GP15, GP19, GP27 |
+   | Microcontroller            | SDA | SCL |
+   | -------------------------- | --- | --- |
+   | Pro Micro, Leonardo, Micro | 2   | 3   |
+   | Uno                        | A4  | A5  |
+   | Mega                       | 20  | 21  |
 
    </details>
 
@@ -220,20 +205,6 @@ When the strums are part of the main board you will need to cut the traces or yo
 </details>
 
 <details>
-    <summary>USB Host (Pi Pico Only)</summary>
-If you want to use your controller on an unmodifed Xbox 360 or Xbox One or Xbox Series, you can wire a USB port to the Pi Pico. You can also use this feature if your  guitar is USB based (like the xplorer) and you would rather pass some inputs through instead of wiring them manually, such as the dpad or start and select on the xplorer.
-
-[![usb](/assets/images/usb.png)](/assets/images/usb.png)
-
-1. If you are using a USB extension cable, cut it in half and expose the four cables.
-2. Hook up the V+ / VBUS (Red) to the VBUS pin on your Pi Pico
-3. Hook up the V- / GND (Black) to ground on your Pi Pico
-4. Hook up D+ (Green) to a unused digital pin.
-5. Hook up D- (White) to the digital pin directly after D+. For example, you can hook up D+ to GP2 and D- to GP3.
-
-</details>
-
-<details>
     <summary>Guitar Hero World Tour neck</summary>
 
 The world tour slider bar originally used a single wire to connect between the bar and the main PCB. This caused a lot of problems, as the format of data being sent over this wire is not optimal for speed, and it limits the combinations of frets we can read from the slider bar. To combat this, we bypass the chip generating this data, and opt to use a dedicated touch sensor chip, the MPR121, to handle reading from the slider bar and sending us data in a format that we can easily use.
@@ -252,14 +223,11 @@ The world tour slider bar originally used a single wire to connect between the b
 6. Hook up V<sub>CC</sub> (marked as 3.3V) and GND (marked as GND) to the microcontroller. Note that this means you need to use a 3.3V power pin on your microconroller, so if your microcontroller only has 5V power pins you will need a voltage regulator.
 2. Hook up SDA and SCL to the microcontroller
 
-   | Microcontroller               | SDA (D)                          | SCL (C)                          |
-   | ----------------------------- | -------------------------------- | -------------------------------- |
-   | Pi Pico (Recommended)         | GP18                             | GP19                             |
-   | Pro Micro, Leonardo, Micro    | 2                                | 3                                |
-   | Uno                           | A4                               | A5                               |
-   | Mega                          | 20                               | 21                               |
-   | Pi Pico (Advanced, Channel 0) | GP0, GP4, GP8, GP12, GP16, GP20  | GP1, GP5, GP9, GP13, GP17, GP21  |
-   | Pi Pico (Advanced, Channel 1) | GP2, GP6, GP10, GP14, GP18, GP26 | GP3, GP7, GP11, GP15, GP19, GP27 |
+   | Microcontroller            | SDA (D) | SCL (C) |
+   | -------------------------- | ------- | ------- |
+   | Pro Micro, Leonardo, Micro | 2       | 3       |
+   | Uno                        | A4      | A5      |
+   | Mega                       | 20      | 21      |
 
 </details>
 
@@ -269,14 +237,11 @@ The world tour slider bar originally used a single wire to connect between the b
 1. Hook up V<sub>CC</sub> (marked as V or V<sub>CC</sub>) and GND (marked as GND or G) to the microcontroller
 2. Hook up SDA (Marked as D) and SCL (marked as C) to the microcontroller
 
-   | Microcontroller               | SDA (D)                          | SCL (C)                          |
-   | ----------------------------- | -------------------------------- | -------------------------------- |
-   | Pi Pico (Recommended)         | GP18                             | GP19                             |
-   | Pro Micro, Leonardo, Micro    | 2                                | 3                                |
-   | Uno                           | A4                               | A5                               |
-   | Mega                          | 20                               | 21                               |
-   | Pi Pico (Advanced, Channel 0) | GP0, GP4, GP8, GP12, GP16, GP20  | GP1, GP5, GP9, GP13, GP17, GP21  |
-   | Pi Pico (Advanced, Channel 1) | GP2, GP6, GP10, GP14, GP18, GP26 | GP3, GP7, GP11, GP15, GP19, GP27 |
+   | Microcontroller            | SDA (D) | SCL (C) |
+   | -------------------------- | ------- | ------- |
+   | Pro Micro, Leonardo, Micro | 2       | 3       |
+   | Uno                        | A4      | A5      |
+   | Mega                       | 20      | 21      |
 
 </details>
 
@@ -288,22 +253,19 @@ The world tour slider bar originally used a single wire to connect between the b
 1. Hook up V<sub>CC</sub>, GND, SCL and SDA pins to your microcontroller. Note that this is one of the few I2C devices that works perfectly fine on 5v.
 2. Hook up SDA (Marked as D) and SCL (marked as C) to the microcontroller
 
-   | Microcontroller               | SDA (D)                          | SCL (C)                          |
-   | ----------------------------- | -------------------------------- | -------------------------------- |
-   | Pi Pico (Recommended)         | GP18                             | GP19                             |
-   | Pro Micro, Leonardo, Micro    | 2                                | 3                                |
-   | Uno                           | A4                               | A5                               |
-   | Mega                          | 20                               | 21                               |
-   | Pi Pico (Advanced, Channel 0) | GP0, GP4, GP8, GP12, GP16, GP20  | GP1, GP5, GP9, GP13, GP17, GP21  |
-   | Pi Pico (Advanced, Channel 1) | GP2, GP6, GP10, GP14, GP18, GP26 | GP3, GP7, GP11, GP15, GP19, GP27 |
+   | Microcontroller            | SDA (D) | SCL (C) |
+   | -------------------------- | ------- | ------- |
+   | Pro Micro, Leonardo, Micro | 2       | 3       |
+   | Uno                        | A4      | A5      |
+   | Mega                       | 20      | 21      |
 
    </details>
 
 <details>
     <summary>GH5 / Crazy guitar frets (Direct, lower latency)</summary>
 
-1. If you wish to bypass the neck connector for your frets, there are three choices, you can opt to wire the frets directly from the fret pcb to the pico, you can use an MPR121 and avoid needing to run more wires, or you can use peripheral mode and avoid needing to run more wires. The MPR121 replaces the entire slider bar PCB and handles both the slider pads and the frets, while the peripheral only handles the frets, and requires using the original slider bar PCB for keeping slider functionality.
-2. For direct mode, run a wire from the fret pin to a pin on the pico, and make sure there is a wire from the ground pin on the fret pcb to the picos ground pin.
+1. If you wish to bypass the neck connector for your frets, you can wire the frets directly to the microcontroller or use an MPR121 to avoid needing to run more wires. The MPR121 replaces the entire slider bar PCB and handles both the slider pads and the frets.
+2. For direct mode, run a wire from each fret pin to a pin on the microcontroller, and connect the ground pin on the fret PCB to the microcontroller's ground pin.
 </details>
 
 <details>
@@ -321,52 +283,15 @@ The world tour slider bar originally used a single wire to connect between the b
 7. Hook up V<sub>CC</sub> (marked as 3.3V) and GND (marked as GND) to the microcontroller. Note that this means you need to use a 3.3V power pin on your microconroller, so if your microcontroller only has 5V power pins you will need a voltage regulator.
 8. Hook up SDA and SCL to the microcontroller
 
-   | Microcontroller               | SDA (D)                          | SCL (C)                          |
-   | ----------------------------- | -------------------------------- | -------------------------------- |
-   | Pi Pico (Recommended)         | GP18                             | GP19                             |
-   | Pro Micro, Leonardo, Micro    | 2                                | 3                                |
-   | Uno                           | A4                               | A5                               |
-   | Mega                          | 20                               | 21                               |
-   | Pi Pico (Advanced, Channel 0) | GP0, GP4, GP8, GP12, GP16, GP20  | GP1, GP5, GP9, GP13, GP17, GP21  |
-   | Pi Pico (Advanced, Channel 1) | GP2, GP6, GP10, GP14, GP18, GP26 | GP3, GP7, GP11, GP15, GP19, GP27 |
-
-   </details>
-
-<details>
-    <summary>GH5 / Crazy guitar frets (Peripheral, Low Latency Frets with 4 pins)</summary>
-
-1. In some cases, you may want to poll frets directly, but you still wish to use a neck connector that does not have enough pins to connect the frets. You can get around this by putting a second Pi Pico in the neck.
-2. Choose some SDA and SCL pins on each Pico, and connect them by these pins.
-
-   | Microcontroller               | SDA                              | SCL                              |
-   | ----------------------------- | -------------------------------- | -------------------------------- |
-   | Pi Pico (Recommended)         | GP18                             | GP19                             |
-   | Pi Pico (Advanced, Channel 0) | GP0, GP4, GP8, GP12, GP16, GP20  | GP1, GP5, GP9, GP13, GP17, GP21  |
-   | Pi Pico (Advanced, Channel 1) | GP2, GP6, GP10, GP14, GP18, GP26 | GP3, GP7, GP11, GP15, GP19, GP27 |
-
-3. Connect the Slider bar to the same SDA and SCL pins
-4. Connect VBUS and GND between the two Pi Picos.
-5. Connect the Slider bar to 3.3v and GND on the peripheral Pico.
-6. For the frets, if it is not labeled it is easiest to follow the traces between the fret contacts. The ground wire traces will connect to all of the fret contacts, whereas a fret trace will lead to a single fret contact. At the end of this guide, there are some images for known neck pinouts. If using the multimeter, test between the fret wire and the ground wire, and the multimeter should beep when the fret is pressed.
-7. Connect the common grounds to a ground pin on the peripheral Pico.
-8. Connect each fret to its own unused digital pin on the peripheral Pico.
+   | Microcontroller            | SDA (D) | SCL (C) |
+   | -------------------------- | ------- | ------- |
+   | Pro Micro, Leonardo, Micro | 2       | 3       |
+   | Uno                        | A4      | A5      |
+   | Mega                       | 20      | 21      |
 
    </details>
 
 ## Programming
-
-### Peripheral
-
-If you intend to use the peripheral features, it is recommended to program the peripheral pico first. Follow the below instructions to do that, or skip these if you are not using this feature.
-
-1.  Plug the peripheral pico into your computer. Make sure the main pico is not plugged in at this stage.
-2.  Open `Santroller`
-3.  Set the Input Type to `Peripheral Device`
-4.  Pick the SCL and SDA pins.
-5.  Click `Configure`
-6.  Now you can unplug the peripheral pico from your comptuter, and follow the rest of the instructions.
-
-### Main
 
 1.  Start Santroller with your microcontroller plugged in.
 2.  Set the Input Type to Directly Wired
@@ -475,14 +400,13 @@ If you intend to use the peripheral features, it is recommended to program the p
 
    1. Click on `Add setting`
    2. Add an `Accelerometer`
-   3. For the Pi Pico, set the SDA and SCL pins that you have used.
-   4. Click `Save`
-   5. Click on Tilt, and make sure the `Input Type` is set to `Accelerometer Input`.
-   6. Click on `Calibrate`
-   7. Hold your guitar in its resting position, and then click `Next`
-   8. Tilt the guitar up, and then click `Next`
-   9. Tilt your guitar up a little bit and then click `Next`. Values below this position will be zeroed. With the adxl, you can increase the deadzone to help counteract strumming or shaking activating tilt.
-   10. Adjust the `Low Pass Filter`. This value controls how new value from the ADXL are filtered, a value closer to 0 will result in a sensor that won't respond to a shake or strumming, but if you decrease it too much the sensor will have a decreased responsiveness. If you set it closer to 1, then the sensor will be very responsive but it will also pick up any tiny vibrations as well. From testing a value of 0.05 seemed like a good place to start. 
+   3. Click `Save`
+   4. Click on Tilt, and make sure the `Input Type` is set to `Accelerometer Input`.
+   5. Click on `Calibrate`
+   6. Hold your guitar in its resting position, and then click `Next`
+   7. Tilt the guitar up, and then click `Next`
+   8. Tilt your guitar up a little bit and then click `Next`. Values below this position will be zeroed. With the adxl, you can increase the deadzone to help counteract strumming or shaking activating tilt.
+   9. Adjust the `Low Pass Filter`. This value controls how new value from the ADXL are filtered, a value closer to 0 will result in a sensor that won't respond to a shake or strumming, but if you decrease it too much the sensor will have a decreased responsiveness. If you set it closer to 1, then the sensor will be very responsive but it will also pick up any tiny vibrations as well. From testing a value of 0.05 seemed like a good place to start.
   </details>
 
   <details>
@@ -493,15 +417,6 @@ If you intend to use the peripheral features, it is recommended to program the p
   3. Set the SDA and SCL pins that you have used.
   4. Set the `MPR121 Capacitive Touch Pad Count` based on the number of touch pads you are using. For a normal slider bar, this should be 5, or if you aren't using a slider bar set this to 0.
   5. Click `Save`
-  </details>
-
-  <details>
-    <summary>Peripheral</summary>
-
-  1. Click on `Peripheral Settings`
-  2. Enable the Peripheral
-  3. Set the SDA and SCL pins on the main PCB that are being connected to the peripheral.
-  4. Click `Save`
   </details>
 
   <details>
@@ -545,27 +460,6 @@ If you intend to use the peripheral features, it is recommended to program the p
     5. Set the channels based on your wiring. The configuration will update live, so if you are unsure which via maps to which slider pad, you can just work through the channels and assign things to the correct pads by touching each pad and working out which channel is which.
     6. Go to each fret, and set its `Input Type` to `MPR121 Input`.
     7. Set the channel based on your wiring. If you are unsure which channel you used, you can just walk through each channel and work out which one was used, as the status of the MPR121 will update live as you press and release frets.
-  </details>
-
-  <details>
-    <summary>GH5 / Crazy Guitar (Peripheral Mode)</summary>
-
-  1. If you wish to have better latency frets with these necks, but do not want to hardwire the frets, you can instead opt to use the peripheral mode. You can still follow the Standard wiring if you would like the slider bar to work, but then you do not need to enable the frets as we will bypass the original neck for those inputs.
-  2. Go to each fret, and set its `Input Type` to `Digital Pin Input (Peripheral)`.
-  2. Make sure `Pin Mode` is set to `Pull Up`.
-  3. Use `Find Pin` to detect the pin your fret was hooked up to.
-  </details>
-
-  <details>
-    <summary>USB Host (Pi Pico Only)</summary>
-
-  1. Click on Add setting
-  2. Find and add `USB Host inputs`
-  3. Bind D+
-  4. Click `Save`
-  5. If you plug in a supported controller, the tool should detect it and tell you what it is.
-  6. If you have a modded xbox and are using `usbdsecpatch`, you can disable `Authentication for Xbox 360`.
-
   </details>
 
 14. If you do not want to hook an input up, click the `Remove` button to the right on that input.

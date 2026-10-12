@@ -12,18 +12,9 @@ Rock Band uses USB instruments. If you set your emulation mode to either `Rock B
 
 ## Guitar Hero / DJ Hero
 
-Guitar Hero and DJ Hero instruments connect through the Wii Remote rather than USB. Because of this, you must emulate a Wii Extension in order to play these games.
+Guitar Hero and DJ Hero instruments connect through the Wii Remote rather than USB. The legacy firmware cannot emulate a wired Wii Extension.
 
-There are two ways to do this:
-
-- Physically wire a Wii Extension port to your controller and plug it into a Wii Remote
-- Mod your Wii and use software to emulate a Wii Extension
-
----
-
-## Adding a Wii Extension port to your controller
-
-You can follow the [Wii Extension emulation guide](https://santroller.tangentmc.net/wiring_guides/wii_output.html) to emulate proper Wii Extensions and plug them directly into a Wii Remote.
+You must mod your Wii and use software to emulate a Wii Extension.
 
 ---
 
@@ -65,4 +56,3 @@ Booting the game from the SD card locks the SD card, and because of that, brains
 9. Save the settings
 10. Plug in the USB instrument
 11. Launch the game
-

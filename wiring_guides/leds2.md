@@ -26,7 +26,7 @@ Usually LEDs will have a recommended resistor in their datasheets, but there are
 
 ## Steps
 
-1. Hook all the anodes of the LEDs to the 5V pin on your microcontroller (note that for the pi pico, this is VBUS).
+1. Hook all the anodes of the LEDs to the 5V pin on your microcontroller.
 2. Hook up the cathodes of the LEDs to one side of each fret
 3. Hook the other side of the fret up to a digital pin on your microcontroller
 4. Hook up the resistor in parallel between each digital pin and ground. You should have two connections to each digital pin, one going to the fret, and one going to a resistor that then goes to ground.
@@ -34,7 +34,6 @@ Usually LEDs will have a recommended resistor in their datasheets, but there are
 
    | Microcontroller            | Analog Output Pins     |
    | -------------------------- | ---------------------- |
-   | Pi Pico (Recommended)      | Any                    |
    | Pro Micro, Leonardo, Micro | 3, 5, 6, 9, 10, 11, 13 |
    | Uno                        | 3, 5, 6, 9, 10         |
    | Mega                       | 2 - 13, 44 - 46        |

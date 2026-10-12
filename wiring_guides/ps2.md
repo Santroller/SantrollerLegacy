@@ -8,9 +8,7 @@ sort: 6
 
 - A microcontroller
 
-  - The Pi Pico 1, Pi Pico 2, or microcontrollers based on them, are currently the only supported microcontrollers. Previous versions of santroller did support other microcontrollers, and information about that can be found below.
-
-    {% include sections/microcontrollers.md %}
+  {% include sections/microcontrollers.md %}
 
 - For any 5v microcontrollers, you will need a 3.3v voltage regulator.
 - PS2 Controller socket
@@ -25,9 +23,7 @@ Be careful that you don't ever provide 5v power to any pins on the PS2 Controlle
 1. Connect pins according to the below table.
 
    For beginners we provide a recommended pinout below for each microcontroller. These pinouts are the same pinouts that are used on the old Ardwiino firmware, so if you have an old device, this is the pinout it will be using.
-   If these pins don't work for you, you can use one of the advanced pinouts below. Note that the Pi Pico has multiple channels, and SCK, MOSI and MISO need to be from the same channel.
-
-   [![pinout](/assets/images/ps2.png)](/assets/images/ps2.png) [![Adapter pinout](/assets/images/ps2-pinout.png)](/assets/images/ps2-pinout.png)
+   [![pinout](/assets/images/ps2.png)](/assets/images/ps2.png)
   
   ```danger
   Note that this image is of the plug on the controller, and not looking at the socket. Make sure you have your wiring in the right order.
@@ -36,12 +32,9 @@ Be careful that you don't ever provide 5v power to any pins on the PS2 Controlle
 
    | Microcontroller                          | SCK / Clock / Blue | MOSI / Command / Orange | MISO / Data / Brown  | Acknowledge / Green    | Attention / Yellow |
    | ---------------------------------------- | ------------------ | ----------------------- | -------------------- | ---------------------- | ------------------ |
-   | Pi Pico (Recommended)                    | GP6                | GP3                     | GP4                  | GP7                    | GP10               |
    | Pro Micro, Leonardo, Micro (Recommended) | 15                 | 16                      | 14                   | 7                      | 10                 |
    | Uno (Recommended)                        | 13                 | 11                      | 12                   | 2                      | 10                 |
    | Mega (Recommended)                       | 52                 | 51                      | 50                   | 2                      | 10                 |
-   | Pi Pico (Advanced, Channel 0)            | GP2, GP6, GP18     | GP3, GP7, GP19          | GP0, GP4, GP16, GP20 | Any                    | Any                |
-   | Pi Pico (Advanced, Channel 1)            | GP10, GP14, GP26   | GP11, GP15, GP27        | GP8, GP12, GP28      | Any                    | Any                |
    | Pro Micro, Leonardo, Micro (Advanced)    | 15                 | 16                      | 14                   | 0, 1, 2, 3 or 7        | Any                |
    | Uno (Advanced)                           | 13                 | 11                      | 12                   | 2 or 3                 | Any                |
    | Mega (Advanced)                          | 52                 | 51                      | 50                   | 2, 3, 18, 19, 20 or 21 | Any                |
@@ -69,9 +62,8 @@ Be careful that you don't ever provide 5v power to any pins on the PS2 Controlle
 12. Combined strum debounce shares the debounce timeframe between both strums (only available on guitars). This means that if you set the strum debounce to 1ms and strummed down, both strum up and down inputs are ignored over that 1ms timeframe. This helps avoid extra strum inputs when your strum switch rebounds after being released.
 13. Click on `PS2 Controller Inputs`
 14. Set the Acknowledge and Attention pins
-15. For the Pi Pico, also specify your MOSI, MISO and SCK pins.
-16. Hit Save.
-17. You can now calibrate your inputs. If your controller is already plugged in it should be detected and show only those inputs, but you can use the `Wii Inputs to display below` dropdown to specify the controller you want to configure.
+15. Hit Save.
+16. You can now calibrate your inputs. If your controller is already plugged in it should be detected and show only those inputs, but you can use the `Wii Inputs to display below` dropdown to specify the controller you want to configure.
     1.  Joysticks
         1.  Hit the `Calibrate` button and then move the stick all the way left / up
         2.  Hit `Next` and then move the stick all the way right / down

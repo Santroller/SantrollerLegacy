@@ -10,9 +10,7 @@ sort: 4
 
 - A microcontroller
 
-  - The Pi Pico 1, Pi Pico 2, or microcontrollers based on them, are currently the only supported microcontrollers. Previous versions of santroller did support other microcontrollers, and information about that can be found below.
-
-    {% include sections/microcontrollers.md %}
+  {% include sections/microcontrollers.md %}
 
 - Some Wire
 - Soldering Iron
@@ -53,7 +51,6 @@ To keep the relevant information in this guide easy to find, information is sort
 
     | Microcontroller            | PWM Pins     |
     | -------------------------- | ---------------------- |
-    | Pi Pico (Recommended)      | Any                    |
     | Pro Micro, Leonardo, Micro | 3, 5, 6, 9, 10, 11, 13 |
     | Uno                        | 3, 5, 6, 9, 10         |
     | Mega                       | 2 - 13, 44 - 46        |
@@ -73,64 +70,17 @@ To keep the relevant information in this guide easy to find, information is sort
 
 1.  The platters connect to the same PCB that the crossfader is on. There will be some labelled pads, V, C, D and G.
 2.  Hook up V to V<sub>CC</sub> and G to GND. For safety I would recommend hooking V to 3.3v on a 5v microcontroller, as most I2C devices I have come across don't like being powered by 5v.
-3.  Hook up the C to SCL and D to SDA. The Pi Pico lets you pick from various pins for the SDA and SCL pins. We provide recommended pins below. If you need to use other pins, the options are provided below but the SDA and SCL pins must be from the same channel.
+3.  Hook up C to SCL and D to SDA using the pins below.
 
-| Microcontroller               | SDA (D)                          | SCL (C)                          |
-| ----------------------------- | -------------------------------- | -------------------------------- |
-| Pi Pico (Recommended)         | GP18                             | GP19                             |
-| Pro Micro, Leonardo, Micro    | 2                                | 3                                |
-| Uno                           | A4                               | A5                               |
-| Mega                          | 20                               | 21                               |
-| Pi Pico (Advanced, Channel 0) | GP0, GP4, GP8, GP12, GP16, GP20  | GP1, GP5, GP9, GP13, GP17, GP21  |
-| Pi Pico (Advanced, Channel 1) | GP2, GP6, GP10, GP14, GP18, GP26 | GP3, GP7, GP11, GP15, GP19, GP27 |
-
-</details>
-
-<details>
-    <summary>Platter (Peripheral)</summary>
-
-If you would like your frets to contain LEDs, or want your frets to poll at a different rate to the rest of the turntable, you can use the [Peripheral feature](https://santroller.tangentmc.net/wiring_guides/peripheral.html). Note that you can currently only have a single peripheral, so you will not be able to use two peripherals to have multiple turntables connected at once.
-
-1.  Open up the platter on your turntable
-2.  Desolder the CLK and DATA from your platter, and solder them to the peripheral pins that you have chosen.
-3.  Desolder the 3V3 (Red) line from the platter and solder it to VBUS on your peripheral. Do the same on the main pico, you should end up with VBUS connected to VBUS via the slip ring and platter connector.
-4.  Connect CLK and DATA. The Pi Pico lets you pick from various pins for the SDA and SCL pins. We provide recommended pins below. If you need to use other pins, the options are provided below but the SDA and SCL pins must be from the same channel.
-
-    | Microcontroller               | SDA (DATA, Yellow)               | SCL (CLK, Green)                 |
-    | ----------------------------- | -------------------------------- | -------------------------------- |
-    | Pi Pico (Recommended)         | GP18                             | GP19                             |
-    | Pi Pico (Advanced, Channel 0) | GP0, GP4, GP8, GP12, GP16, GP20  | GP1, GP5, GP9, GP13, GP17, GP21  |
-    | Pi Pico (Advanced, Channel 1) | GP2, GP6, GP10, GP14, GP18, GP26 | GP3, GP7, GP11, GP15, GP19, GP27 |
-
-5.  Connect 3V3 out to the 3V3 pin on your platter
-6.  Disconnect the buttons from the platter, and connect them to digital pins your peripheral Pico.
-7.  Connect ground on the peripheral to ground (Blue) on the platter. This should also still be connected to ground on the main Pico.
-8.  There should be a common ground going to the frets, and then seperate signal wires. Disconnect the signal wires for the frets from the platter, and then connect them to digital pins on the peripheral pico.
-
-Note: The pinouts for the various pins going through the slip ring are as follows:
-
-- YELLOW: DATA (D)
-- BLUE: GND (G)
-- GREEN: CLK (C)
-- RED: 3V3 (V)
-- WHITE: SENSE PIN (ID)
+| Microcontroller            | SDA (D) | SCL (C) |
+| -------------------------- | ------- | ------- |
+| Pro Micro, Leonardo, Micro | 2       | 3       |
+| Uno                        | A4      | A5      |
+| Mega                       | 20      | 21      |
 
 </details>
 
 ## Programming
-
-### Peripheral
-
-If you intend to use the peripheral features, it is recommended to program the peripheral pico first. Follow the below instructions to do that, or skip these if you are not using this feature.
-
-1.  Plug the peripheral pico into your computer. Make sure the main pico is not plugged in at this stage.
-2.  Open Santroller
-3.  Set the Input Type to `Peripheral Device`
-4.  Pick the SCL and SDA pins
-5.  Hit configure
-6.  Now you can unplug the peripheral pico from your comptuter, and follow the rest of the instructions
-
-### Main
 
 1.  Start Santroller with your microcontroller plugged in.
 2.  Set the Input Type to Directly Wired
@@ -191,37 +141,6 @@ If you intend to use the peripheral features, it is recommended to program the p
 
     1. Click on the Effects Knob, and make sure the `Input Type` is set to `Analog Pin Input`.
     2. Click on the `Find Pin` button, and then press on the whammy. If you have wired everything correctly, the tool should detect the pin and the `Original Value` value should change when you rotate the effects knob.
-    </details>
-
-    <details>
-      <summary>Peripheral</summary>
-
-    1. Click on `Peripheral Settings`
-    2. Enable the Peripheral
-    3. Set the SDA and SCL pins on the main PCB that are being connected to the peripheral.
-    4. Hit save
-    5. Click on `Dj Turntable Inputs`
-    6. Disable all the frets
-    7. Click on `Add Setting`
-    8. Add each fret for the turntable you are configuring
-    9. For each fret: 
-       1.  Click on the Fret 
-       2.  Set the Input Type to `Digital Pin Input (Peripheral)` 
-       3.  Make sure `Pin Mode` is set to `Pull Up`.
-       4.  Click on `Find Pin` 
-       5.  Press the fret in question. The tool should detect this and the fret should light up in the tool when pressed.
-    </details>
-
-    <details>
-      <summary>USB Host (Pi Pico Only)</summary>
-
-    10. Click on Add setting
-    11. Find and add `USB Host inputs`
-    12. Bind D+
-    13. Hit Save
-    14. If you plug in a supported controller, the tool should detect it and tell you what it is.
-    15. If you have a modded xbox and are using `usbdsecpatch`, you can disable `Authentication for Xbox 360`.
-
     </details>
 
 13. If you do not want to hook an input up, hit the `Remove` button to the right on that input.

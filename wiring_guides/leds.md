@@ -18,19 +18,14 @@ You can add LEDs that will light up when a button or analogue input is pressed. 
 
 ## Steps
 
-1. Connect the V<sub>CC</sub> and GND pins on all LEDs that are being used to the microcontroller. It is recommended to use the 5V pin for this, as this is what the LEDs expect to be connected to. For the Pi Pico, this is the VBUS pin.
+1. Connect the V<sub>CC</sub> and GND pins on all LEDs that are being used to the microcontroller. It is recommended to use the 5V pin for this, as this is what the LEDs expect to be connected to.
 2. Connect the SCK (CI) and MOSI (DI) on the first LED to the SCK and MOSI pins on your microcontroller. Then chain the SCK (CO) and MOSI (DO) outputs to the inputs on the next LED, until all LEDs are connected.
    For beginners we provide a recommended pinout below for each microcontroller. These pinouts are the same pinouts that are used on the old Ardwiino firmware, so if you have an old device, this is the pinout it will be using.
-   If you are using a Pi Pico and these pins don't work for you, you can use one of the advanced pinouts below. Note that the Pi Pico has multiple channels, and SCK and MOSI need to be from the same channel.
-
-   | Microcontroller               | SCK (CI)         | MOSI (DI)        |
-   | ----------------------------- | ---------------- | ---------------- |
-   | Pi Pico (Recommended)         | GP6              | GP3              |
-   | Pro Micro, Leonardo, Micro    | 15               | 16               |
-   | Uno                           | 13               | 11               |
-   | Mega                          | 52               | 51               |
-   | Pi Pico (Advanced, Channel 0) | GP2, GP6, GP18   | GP3, GP7, GP19   |
-   | Pi Pico (Advanced, Channel 1) | GP10, GP14, GP26 | GP11, GP15, GP27 |
+   | Microcontroller            | SCK (CI) | MOSI (DI) |
+   | -------------------------- | -------- | --------- |
+   | Pro Micro, Leonardo, Micro | 15       | 16        |
+   | Uno                        | 13       | 11        |
+   | Mega                       | 52       | 51        |
 
 ## Programming
 

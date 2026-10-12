@@ -51,7 +51,7 @@ Pick a guide from the navigation to learn how to build a supported controller or
 
 # Download
 
-[Download the archived Santroller Legacy v10.1.189-legacy.2 release](https://github.com/Santroller/Santroller/releases/tag/v10.1.189-legacy.2). For the currently supported tooling, visit [santroller.com](https://santroller.com).
+[Download the archived Santroller Legacy v10.1.189-legacy.3 release](https://github.com/Santroller/Santroller/releases/tag/v10.1.189-legacy.3). For the currently supported tooling, visit [santroller.com](https://santroller.com).
 
 # Donate
 

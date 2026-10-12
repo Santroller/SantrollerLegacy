@@ -49,7 +49,7 @@ Pick a guide from the navigation to learn how to build a supported controller or
 
 # Download
 
-[Download the Santroller Configurator](https://github.com/Santroller/Santroller/releases/latest).
+[Download Santroller Legacy v10.1.189-legacy.2](https://github.com/Santroller/Santroller/releases/tag/v10.1.189-legacy.2).
 
 # Donate
 

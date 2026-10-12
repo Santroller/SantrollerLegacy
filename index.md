@@ -6,6 +6,8 @@ layout: default
 
 The Santroller legacy platform programs AVR microcontrollers to emulate rhythm game controllers on computers and supported consoles.
 
+> **This legacy firmware and configurator is no longer supported or maintained.** For the currently supported Santroller tooling, visit [santroller.com](https://santroller.com). If you are using a Raspberry Pi Pico, go to [santroller.com](https://santroller.com) for the supported tooling; this legacy release does not support Pico boards.
+
 # Gallery
 
 [![home screen](assets/images/screenshots/home.png)](assets/images/screenshots/home.png)
@@ -33,7 +35,7 @@ The Santroller legacy platform programs AVR microcontrollers to emulate rhythm g
 - APA102-compatible RGB LEDs, standard LEDs, MPR121 GPIO LEDs, and STP16CPC26 LED drivers
 - Player LEDs, rumble, stage-kit outputs, and supported game-event LED bindings
 
-The legacy AVR firmware does not support Raspberry Pi Pico boards, USB Host inputs or authentication passthrough, Bluetooth, peripheral controllers, USB or serial MIDI inputs, WS2812 LEDs, Wii Extension output, or PS2 controller output.
+This legacy AVR firmware does not support Raspberry Pi Pico boards, USB Host inputs or authentication passthrough, Bluetooth, peripheral controllers, USB or serial MIDI inputs, WS2812 LEDs, Wii Extension output, or PS2 controller output. It is provided as an archived release and is not receiving updates or support.
 
 ```note
 Avoid USB 2.0 hubs when using these controllers. Their high polling rate can slow down multiple controllers on one hub and may cause detection issues. USB 3.0 hubs are recommended.
@@ -49,7 +51,7 @@ Pick a guide from the navigation to learn how to build a supported controller or
 
 # Download
 
-[Download Santroller Legacy v10.1.189-legacy.2](https://github.com/Santroller/Santroller/releases/tag/v10.1.189-legacy.2).
+[Download the archived Santroller Legacy v10.1.189-legacy.2 release](https://github.com/Santroller/Santroller/releases/tag/v10.1.189-legacy.2). For the currently supported tooling, visit [santroller.com](https://santroller.com).
 
 # Donate
 
